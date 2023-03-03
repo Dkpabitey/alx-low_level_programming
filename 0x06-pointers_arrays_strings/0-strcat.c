@@ -8,17 +8,20 @@
  *
  * Return: address of dest
  */
+
 char *_strcat(char *dest, char *src)
 {
-	int i, j;
+	int length, j;
 
-	i = j = 0;
-	while (*(dest + i))
-		i++;
-	while ((*(dest + i) = *(src + j)))
+	length = 0;
+	while (dest[length] != '\0')
 	{
-		i++;
-		j++;
+		length++;
 	}
+	for (j = 0; src[j] != '\0'; j++, length++)
+	{
+		dest[length] = src[j];
+	}
+	dest[length] = '\0';
 	return (dest);
 }
